@@ -188,6 +188,53 @@ Public Class Form1
             If (e.Text = "") Then
                 MessageBox.Show("Employee Name cannot be empty", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Else
+
+                '''''''VARIABLES'''''''
+                Dim con As SqlConnection
+                Dim Station = f.Name.Substring(5, 1)
+                Dim SelectedEmp = e.SelectedValue
+                Dim readTableSetID = ""
+
+
+                'SERVER'
+                con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMProduction;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
+
+                Dim CurrentHead As String = "SELECT TOP (1) TableSetID FROM TableSet WHERE TableID = @TS AND TableSetStatus = 1 ORDER BY TableSetID DESC"
+                Dim CurrentHeadQuery As SqlCommand = New SqlCommand(CurrentHead, con)
+                CurrentHeadQuery.Parameters.AddWithValue("@TS", TableSet)
+
+                con.Open()
+                Using reader As SqlDataReader = CurrentHeadQuery.ExecuteReader()
+                    If reader.HasRows Then
+
+                        While reader.Read()
+                            readTableSetID = reader.Item("TableSetID")
+                        End While
+
+                        con.Close()
+                        con.Open()
+                        Dim TableDetails As String = "UPDATE TM SET TableMemberTimeOut = GETDATE(), TableMemberStatus = '3' FROM TableMembers as TM LEFT JOIN TableSet as TS ON TS.TableSetID = TM.TableSetID WHERE TS.TableSetStatus = 1 AND TS.TableID = @TS AND TM.StationID = @SID"
+                        Dim TableDetailsQuery As SqlCommand = New SqlCommand(TableDetails, con)
+                        TableDetailsQuery.Parameters.AddWithValue("@TS", TableSet)
+                        TableDetailsQuery.Parameters.AddWithValue("@SID", Station)
+                        TableDetailsQuery.ExecuteNonQuery()
+                        con.Close()
+
+                        con.Open()
+                        Dim TableAddDetails As String = "INSERT INTO TableMembers (TableSetID,EmployeeID, StationID, TableMemberTimeIn, TableMemberStatus) Values (@TSID, @Emp, @SID,GETDATE(), '1')"
+                        Dim TableAddDetailsQuery As SqlCommand = New SqlCommand(TableAddDetails, con)
+                        TableAddDetailsQuery.Parameters.AddWithValue("@Emp", SelectedEmp)
+                        TableAddDetailsQuery.Parameters.AddWithValue("@TSID", readTableSetID)
+                        TableAddDetailsQuery.Parameters.AddWithValue("@SID", Station)
+                        TableAddDetailsQuery.ExecuteNonQuery()
+                        con.Close()
+
+
+                    End If
+
+                End Using
+
+
                 x.Text = "Sign Out"
                 x.BackColor = Color.RosyBrown
                 e.Enabled = False
@@ -265,6 +312,8 @@ Public Class Form1
             CType(CType(Me.Controls("Panel" + (i).ToString()), Panel).Controls("Button" + (i).ToString()), Button).BackColor = Color.Orange
 
         Next
+
+
 
     End Sub
 
@@ -389,76 +438,78 @@ Public Class Form1
 
                     If (ActiveStation = 12) Then
 
-
-                        '''''''VARIABLES'''''''
-                        Dim con As SqlConnection
-                        'SERVER'
-                        con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMProduction;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
-                        con.Open()
-
-                        Dim TableHead As String = "INSERT INTO TableSet (TableID,TableSetLeadID, TableSetName, TableSetTimeIn, TableSetStatus) Values (@TS, @LM, @SN,GETDATE(), '1')"
-                        Dim TableHeadQuery As SqlCommand = New SqlCommand(TableHead, con)
-                        TableHeadQuery.Parameters.AddWithValue("@LM", ComboBox1.SelectedValue)
-                        TableHeadQuery.Parameters.AddWithValue("@TS", TableSet)
-                        TableHeadQuery.Parameters.AddWithValue("@SN", Label21.Text)
-                        TableHeadQuery.ExecuteNonQuery()
+                        If (ComboBox1.Enabled = True) Then
 
 
-                        Dim TableMembers As String = "INSERT INTO TableMembers (TableSetID,EmployeeID, StationID, TableMemberTimeIn, TableMemberStatus) Values (@TSID, @Emp1, '1',GETDATE(), '1'), (@TSID, @Emp2, '2',GETDATE(), '1'), (@TSID, @Emp3, '3',GETDATE(), '1'), (@TSID, @Emp4, '4',GETDATE(), '1'), (@TSID, @Emp5, '5',GETDATE(), '1'), (@TSID, @Emp6, '6',GETDATE(), '1'), (@TSID, @Emp7, '7',GETDATE(), '1'), (@TSID, @Emp8, '8',GETDATE(), '1'), (@TSID, @Emp9, '9',GETDATE(), '1'), (@TSID, @Emp10, '10',GETDATE(), '1'), (@TSID, @Emp11, '11',GETDATE(), '1'), (@TSID, @Emp12, '12',GETDATE(), '1')"
-                        Dim TableMembersQuery As SqlCommand = New SqlCommand(TableMembers, con)
+                            '''''''VARIABLES'''''''
+                            Dim con As SqlConnection
+                            'SERVER'
+                            con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMProduction;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
+                            con.Open()
+
+                            Dim TableHead As String = "INSERT INTO TableSet (TableID,TableSetLeadID, TableSetName, TableSetTimeIn, TableSetStatus) Values (@TS, @LM, @SN,GETDATE(), '1')"
+                            Dim TableHeadQuery As SqlCommand = New SqlCommand(TableHead, con)
+                            TableHeadQuery.Parameters.AddWithValue("@LM", ComboBox1.SelectedValue)
+                            TableHeadQuery.Parameters.AddWithValue("@TS", TableSet)
+                            TableHeadQuery.Parameters.AddWithValue("@SN", Label21.Text)
+                            TableHeadQuery.ExecuteNonQuery()
 
 
-                        Dim CurrentHead As String = "SELECT TOP (1) TableSetID FROM TableSet WHERE TableID = @TID ORDER BY TableSetID DESC"
-                        Dim CurrentHeadQuery As SqlCommand = New SqlCommand(CurrentHead, con)
-                        CurrentHeadQuery.Parameters.AddWithValue("@TID", TableSet)
-                        Dim readTableSetID = ""
-
-                        Using reader As SqlDataReader = CurrentHeadQuery.ExecuteReader()
-                            If reader.HasRows Then
-                                While reader.Read()
-                                    readTableSetID = reader.Item("TableSetID")
-                                End While
-                            End If
-
-                        End Using
-
-                        TableMembersQuery.Parameters.AddWithValue("@TSID", readTableSetID)
-
-                        TableMembersQuery.Parameters.AddWithValue("@Emp1", ComboBox2.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp2", ComboBox3.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp3", ComboBox4.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp4", ComboBox5.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp5", ComboBox6.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp6", ComboBox7.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp7", ComboBox8.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp8", ComboBox9.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp9", ComboBox10.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp10", ComboBox11.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp11", ComboBox12.SelectedValue)
-                        TableMembersQuery.Parameters.AddWithValue("@Emp12", ComboBox13.SelectedValue)
-                        TableMembersQuery.ExecuteNonQuery()
-                        con.Close()
+                            Dim TableMembers As String = "INSERT INTO TableMembers (TableSetID,EmployeeID, StationID, TableMemberTimeIn, TableMemberStatus) Values (@TSID, @Emp1, '1',GETDATE(), '1'), (@TSID, @Emp2, '2',GETDATE(), '1'), (@TSID, @Emp3, '3',GETDATE(), '1'), (@TSID, @Emp4, '4',GETDATE(), '1'), (@TSID, @Emp5, '5',GETDATE(), '1'), (@TSID, @Emp6, '6',GETDATE(), '1'), (@TSID, @Emp7, '7',GETDATE(), '1'), (@TSID, @Emp8, '8',GETDATE(), '1'), (@TSID, @Emp9, '9',GETDATE(), '1'), (@TSID, @Emp10, '10',GETDATE(), '1'), (@TSID, @Emp11, '11',GETDATE(), '1'), (@TSID, @Emp12, '12',GETDATE(), '1')"
+                            Dim TableMembersQuery As SqlCommand = New SqlCommand(TableMembers, con)
 
 
-                        Button13.BackColor = Color.DarkGray
-                        Button13.Text = "Release"
-                        ComboBox1.Enabled = False
-                        Button14.Enabled = False
-                        Button15.Enabled = False
-                        Button16.Enabled = False
-                        Button20.Enabled = False
-                        Button17.Enabled = False
-                        Button18.Enabled = False
-                        Button19.Enabled = False
-                        Button21.Enabled = False
-                        Button22.Enabled = False
-                        Button23.Enabled = False
-                        Button24.Enabled = False
-                        Button25.Enabled = False
-                    Else
-                        MessageBox.Show("Please fill all the station")
+                            Dim CurrentHead As String = "SELECT TOP (1) TableSetID FROM TableSet WHERE TableID = @TID ORDER BY TableSetID DESC"
+                            Dim CurrentHeadQuery As SqlCommand = New SqlCommand(CurrentHead, con)
+                            CurrentHeadQuery.Parameters.AddWithValue("@TID", TableSet)
+                            Dim readTableSetID = ""
+
+                            Using reader As SqlDataReader = CurrentHeadQuery.ExecuteReader()
+                                If reader.HasRows Then
+                                    While reader.Read()
+                                        readTableSetID = reader.Item("TableSetID")
+                                    End While
+                                End If
+
+                            End Using
+
+                            TableMembersQuery.Parameters.AddWithValue("@TSID", readTableSetID)
+
+                            TableMembersQuery.Parameters.AddWithValue("@Emp1", ComboBox2.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp2", ComboBox3.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp3", ComboBox4.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp4", ComboBox5.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp5", ComboBox6.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp6", ComboBox7.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp7", ComboBox8.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp8", ComboBox9.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp9", ComboBox10.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp10", ComboBox11.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp11", ComboBox12.SelectedValue)
+                            TableMembersQuery.Parameters.AddWithValue("@Emp12", ComboBox13.SelectedValue)
+                            TableMembersQuery.ExecuteNonQuery()
+                            con.Close()
+
+
+                            Button13.BackColor = Color.DarkGray
+                            Button13.Text = "Release"
+                            ComboBox1.Enabled = False
+                            Button14.Enabled = False
+                            Button15.Enabled = False
+                            Button16.Enabled = False
+                            Button20.Enabled = False
+                            Button17.Enabled = False
+                            Button18.Enabled = False
+                            Button19.Enabled = False
+                            Button21.Enabled = False
+                            Button22.Enabled = False
+                            Button23.Enabled = False
+                            Button24.Enabled = False
+                            Button25.Enabled = False
+                        Else
+                            MessageBox.Show("Please fill all the station")
+                        End If
                     End If
-
                 End If
             End If
         Else
