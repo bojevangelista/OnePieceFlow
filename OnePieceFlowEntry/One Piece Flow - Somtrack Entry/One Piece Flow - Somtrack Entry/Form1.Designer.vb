@@ -49,17 +49,26 @@ Partial Class Form1
         Me.Label9 = New System.Windows.Forms.Label()
         Me.RadioButton9 = New System.Windows.Forms.RadioButton()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton11 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton12 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton13 = New System.Windows.Forms.RadioButton()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.RadioButton14 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton15 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton16 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton18 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton19 = New System.Windows.Forms.RadioButton()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -129,6 +138,8 @@ Partial Class Form1
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.Enabled = False
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(121, 512)
@@ -160,6 +171,8 @@ Partial Class Form1
         '
         'ComboBox2
         '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.Enabled = False
         Me.ComboBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(600, 512)
@@ -180,6 +193,8 @@ Partial Class Form1
         '
         'ComboBox3
         '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.Enabled = False
         Me.ComboBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.ComboBox3.FormattingEnabled = True
         Me.ComboBox3.Location = New System.Drawing.Point(1070, 512)
@@ -190,6 +205,7 @@ Partial Class Form1
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Enabled = False
         Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.CheckBox1.ForeColor = System.Drawing.Color.White
         Me.CheckBox1.Location = New System.Drawing.Point(121, 567)
@@ -202,6 +218,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.Enabled = False
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label7.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label7.Location = New System.Drawing.Point(116, 599)
@@ -215,7 +232,7 @@ Partial Class Form1
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton1.ForeColor = System.Drawing.Color.White
-        Me.RadioButton1.Location = New System.Drawing.Point(284, 597)
+        Me.RadioButton1.Location = New System.Drawing.Point(9, 9)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(97, 29)
         Me.RadioButton1.TabIndex = 31
@@ -228,7 +245,7 @@ Partial Class Form1
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton2.ForeColor = System.Drawing.Color.White
-        Me.RadioButton2.Location = New System.Drawing.Point(462, 597)
+        Me.RadioButton2.Location = New System.Drawing.Point(187, 9)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(128, 29)
         Me.RadioButton2.TabIndex = 32
@@ -241,7 +258,7 @@ Partial Class Form1
         Me.RadioButton3.AutoSize = True
         Me.RadioButton3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton3.ForeColor = System.Drawing.Color.White
-        Me.RadioButton3.Location = New System.Drawing.Point(462, 654)
+        Me.RadioButton3.Location = New System.Drawing.Point(190, 8)
         Me.RadioButton3.Name = "RadioButton3"
         Me.RadioButton3.Size = New System.Drawing.Size(82, 29)
         Me.RadioButton3.TabIndex = 35
@@ -254,7 +271,7 @@ Partial Class Form1
         Me.RadioButton4.AutoSize = True
         Me.RadioButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton4.ForeColor = System.Drawing.Color.White
-        Me.RadioButton4.Location = New System.Drawing.Point(284, 654)
+        Me.RadioButton4.Location = New System.Drawing.Point(12, 8)
         Me.RadioButton4.Name = "RadioButton4"
         Me.RadioButton4.Size = New System.Drawing.Size(97, 29)
         Me.RadioButton4.TabIndex = 34
@@ -265,6 +282,7 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
+        Me.Label8.Enabled = False
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label8.Location = New System.Drawing.Point(116, 656)
@@ -278,7 +296,7 @@ Partial Class Form1
         Me.RadioButton5.AutoSize = True
         Me.RadioButton5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton5.ForeColor = System.Drawing.Color.White
-        Me.RadioButton5.Location = New System.Drawing.Point(647, 654)
+        Me.RadioButton5.Location = New System.Drawing.Point(375, 8)
         Me.RadioButton5.Name = "RadioButton5"
         Me.RadioButton5.Size = New System.Drawing.Size(77, 29)
         Me.RadioButton5.TabIndex = 36
@@ -291,7 +309,7 @@ Partial Class Form1
         Me.RadioButton6.AutoSize = True
         Me.RadioButton6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton6.ForeColor = System.Drawing.Color.White
-        Me.RadioButton6.Location = New System.Drawing.Point(647, 711)
+        Me.RadioButton6.Location = New System.Drawing.Point(375, 3)
         Me.RadioButton6.Name = "RadioButton6"
         Me.RadioButton6.Size = New System.Drawing.Size(179, 29)
         Me.RadioButton6.TabIndex = 40
@@ -304,7 +322,7 @@ Partial Class Form1
         Me.RadioButton7.AutoSize = True
         Me.RadioButton7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton7.ForeColor = System.Drawing.Color.White
-        Me.RadioButton7.Location = New System.Drawing.Point(462, 711)
+        Me.RadioButton7.Location = New System.Drawing.Point(190, 3)
         Me.RadioButton7.Name = "RadioButton7"
         Me.RadioButton7.Size = New System.Drawing.Size(83, 29)
         Me.RadioButton7.TabIndex = 39
@@ -317,7 +335,7 @@ Partial Class Form1
         Me.RadioButton8.AutoSize = True
         Me.RadioButton8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton8.ForeColor = System.Drawing.Color.White
-        Me.RadioButton8.Location = New System.Drawing.Point(284, 711)
+        Me.RadioButton8.Location = New System.Drawing.Point(12, 3)
         Me.RadioButton8.Name = "RadioButton8"
         Me.RadioButton8.Size = New System.Drawing.Size(83, 29)
         Me.RadioButton8.TabIndex = 38
@@ -328,6 +346,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.Enabled = False
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label9.Location = New System.Drawing.Point(115, 713)
@@ -341,7 +360,7 @@ Partial Class Form1
         Me.RadioButton9.AutoSize = True
         Me.RadioButton9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton9.ForeColor = System.Drawing.Color.White
-        Me.RadioButton9.Location = New System.Drawing.Point(284, 746)
+        Me.RadioButton9.Location = New System.Drawing.Point(12, 38)
         Me.RadioButton9.Name = "RadioButton9"
         Me.RadioButton9.Size = New System.Drawing.Size(263, 29)
         Me.RadioButton9.TabIndex = 41
@@ -354,7 +373,7 @@ Partial Class Form1
         Me.RadioButton10.AutoSize = True
         Me.RadioButton10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton10.ForeColor = System.Drawing.Color.White
-        Me.RadioButton10.Location = New System.Drawing.Point(647, 746)
+        Me.RadioButton10.Location = New System.Drawing.Point(375, 38)
         Me.RadioButton10.Name = "RadioButton10"
         Me.RadioButton10.Size = New System.Drawing.Size(263, 29)
         Me.RadioButton10.TabIndex = 42
@@ -362,48 +381,10 @@ Partial Class Form1
         Me.RadioButton10.Text = "Upper Flex / Lower Classic"
         Me.RadioButton10.UseVisualStyleBackColor = True
         '
-        'RadioButton11
-        '
-        Me.RadioButton11.AutoSize = True
-        Me.RadioButton11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton11.ForeColor = System.Drawing.Color.White
-        Me.RadioButton11.Location = New System.Drawing.Point(647, 799)
-        Me.RadioButton11.Name = "RadioButton11"
-        Me.RadioButton11.Size = New System.Drawing.Size(214, 29)
-        Me.RadioButton11.TabIndex = 46
-        Me.RadioButton11.TabStop = True
-        Me.RadioButton11.Text = "Morning Repositioner"
-        Me.RadioButton11.UseVisualStyleBackColor = True
-        '
-        'RadioButton12
-        '
-        Me.RadioButton12.AutoSize = True
-        Me.RadioButton12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton12.ForeColor = System.Drawing.Color.White
-        Me.RadioButton12.Location = New System.Drawing.Point(462, 799)
-        Me.RadioButton12.Name = "RadioButton12"
-        Me.RadioButton12.Size = New System.Drawing.Size(174, 29)
-        Me.RadioButton12.TabIndex = 45
-        Me.RadioButton12.TabStop = True
-        Me.RadioButton12.Text = "Elastic Retention"
-        Me.RadioButton12.UseVisualStyleBackColor = True
-        '
-        'RadioButton13
-        '
-        Me.RadioButton13.AutoSize = True
-        Me.RadioButton13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton13.ForeColor = System.Drawing.Color.White
-        Me.RadioButton13.Location = New System.Drawing.Point(284, 799)
-        Me.RadioButton13.Name = "RadioButton13"
-        Me.RadioButton13.Size = New System.Drawing.Size(113, 29)
-        Me.RadioButton13.TabIndex = 44
-        Me.RadioButton13.TabStop = True
-        Me.RadioButton13.Text = "Dentritrac"
-        Me.RadioButton13.UseVisualStyleBackColor = True
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
+        Me.Label10.Enabled = False
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label10.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label10.Location = New System.Drawing.Point(116, 801)
@@ -412,112 +393,185 @@ Partial Class Form1
         Me.Label10.TabIndex = 43
         Me.Label10.Text = "Options :"
         '
-        'RadioButton14
+        'CheckBox2
         '
-        Me.RadioButton14.AutoSize = True
-        Me.RadioButton14.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton14.ForeColor = System.Drawing.Color.White
-        Me.RadioButton14.Location = New System.Drawing.Point(647, 834)
-        Me.RadioButton14.Name = "RadioButton14"
-        Me.RadioButton14.Size = New System.Drawing.Size(184, 29)
-        Me.RadioButton14.TabIndex = 49
-        Me.RadioButton14.TabStop = True
-        Me.RadioButton14.Text = "Lateral Allowance"
-        Me.RadioButton14.UseVisualStyleBackColor = True
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox2.ForeColor = System.Drawing.Color.White
+        Me.CheckBox2.Location = New System.Drawing.Point(22, 6)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(114, 29)
+        Me.CheckBox2.TabIndex = 53
+        Me.CheckBox2.Text = "Dentritrac"
+        Me.CheckBox2.UseVisualStyleBackColor = True
         '
-        'RadioButton15
+        'CheckBox3
         '
-        Me.RadioButton15.AutoSize = True
-        Me.RadioButton15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton15.ForeColor = System.Drawing.Color.White
-        Me.RadioButton15.Location = New System.Drawing.Point(462, 834)
-        Me.RadioButton15.Name = "RadioButton15"
-        Me.RadioButton15.Size = New System.Drawing.Size(175, 29)
-        Me.RadioButton15.TabIndex = 48
-        Me.RadioButton15.TabStop = True
-        Me.RadioButton15.Text = "Disclusion Ramp"
-        Me.RadioButton15.UseVisualStyleBackColor = True
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox3.ForeColor = System.Drawing.Color.White
+        Me.CheckBox3.Location = New System.Drawing.Point(22, 41)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(159, 29)
+        Me.CheckBox3.TabIndex = 54
+        Me.CheckBox3.Text = "Breathing Hole"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
-        'RadioButton16
+        'CheckBox4
         '
-        Me.RadioButton16.AutoSize = True
-        Me.RadioButton16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton16.ForeColor = System.Drawing.Color.White
-        Me.RadioButton16.Location = New System.Drawing.Point(284, 834)
-        Me.RadioButton16.Name = "RadioButton16"
-        Me.RadioButton16.Size = New System.Drawing.Size(158, 29)
-        Me.RadioButton16.TabIndex = 47
-        Me.RadioButton16.TabStop = True
-        Me.RadioButton16.Text = "Breathing Hole"
-        Me.RadioButton16.UseVisualStyleBackColor = True
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox4.ForeColor = System.Drawing.Color.White
+        Me.CheckBox4.Location = New System.Drawing.Point(22, 76)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(129, 29)
+        Me.CheckBox4.TabIndex = 55
+        Me.CheckBox4.Text = "Ball Clasps"
+        Me.CheckBox4.UseVisualStyleBackColor = True
         '
-        'RadioButton17
+        'CheckBox5
         '
-        Me.RadioButton17.AutoSize = True
-        Me.RadioButton17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton17.ForeColor = System.Drawing.Color.White
-        Me.RadioButton17.Location = New System.Drawing.Point(647, 869)
-        Me.RadioButton17.Name = "RadioButton17"
-        Me.RadioButton17.Size = New System.Drawing.Size(214, 29)
-        Me.RadioButton17.TabIndex = 52
-        Me.RadioButton17.TabStop = True
-        Me.RadioButton17.Text = "Morning Repositioner"
-        Me.RadioButton17.UseVisualStyleBackColor = True
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox5.ForeColor = System.Drawing.Color.White
+        Me.CheckBox5.Location = New System.Drawing.Point(200, 6)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(175, 29)
+        Me.CheckBox5.TabIndex = 56
+        Me.CheckBox5.Text = "Elastic Retention"
+        Me.CheckBox5.UseVisualStyleBackColor = True
         '
-        'RadioButton18
+        'CheckBox6
         '
-        Me.RadioButton18.AutoSize = True
-        Me.RadioButton18.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton18.ForeColor = System.Drawing.Color.White
-        Me.RadioButton18.Location = New System.Drawing.Point(462, 869)
-        Me.RadioButton18.Name = "RadioButton18"
-        Me.RadioButton18.Size = New System.Drawing.Size(174, 29)
-        Me.RadioButton18.TabIndex = 51
-        Me.RadioButton18.TabStop = True
-        Me.RadioButton18.Text = "Elastic Retention"
-        Me.RadioButton18.UseVisualStyleBackColor = True
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox6.ForeColor = System.Drawing.Color.White
+        Me.CheckBox6.Location = New System.Drawing.Point(200, 41)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(176, 29)
+        Me.CheckBox6.TabIndex = 57
+        Me.CheckBox6.Text = "Disclusion Ramp"
+        Me.CheckBox6.UseVisualStyleBackColor = True
         '
-        'RadioButton19
+        'CheckBox7
         '
-        Me.RadioButton19.AutoSize = True
-        Me.RadioButton19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton19.ForeColor = System.Drawing.Color.White
-        Me.RadioButton19.Location = New System.Drawing.Point(284, 869)
-        Me.RadioButton19.Name = "RadioButton19"
-        Me.RadioButton19.Size = New System.Drawing.Size(113, 29)
-        Me.RadioButton19.TabIndex = 50
-        Me.RadioButton19.TabStop = True
-        Me.RadioButton19.Text = "Dentritrac"
-        Me.RadioButton19.UseVisualStyleBackColor = True
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox7.ForeColor = System.Drawing.Color.White
+        Me.CheckBox7.Location = New System.Drawing.Point(200, 76)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(143, 29)
+        Me.CheckBox7.TabIndex = 58
+        Me.CheckBox7.Text = "Lingual-Less"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox8.ForeColor = System.Drawing.Color.White
+        Me.CheckBox8.Location = New System.Drawing.Point(385, 6)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(215, 29)
+        Me.CheckBox8.TabIndex = 59
+        Me.CheckBox8.Text = "Morning Repositioner"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox9.ForeColor = System.Drawing.Color.White
+        Me.CheckBox9.Location = New System.Drawing.Point(385, 41)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(185, 29)
+        Me.CheckBox9.TabIndex = 60
+        Me.CheckBox9.Text = "Lateral Allowance"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
+        Me.CheckBox10.ForeColor = System.Drawing.Color.White
+        Me.CheckBox10.Location = New System.Drawing.Point(385, 76)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(171, 29)
+        Me.CheckBox10.TabIndex = 61
+        Me.CheckBox10.Text = "Additional Splint"
+        Me.CheckBox10.UseVisualStyleBackColor = True
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.RadioButton1)
+        Me.Panel1.Controls.Add(Me.RadioButton2)
+        Me.Panel1.Enabled = False
+        Me.Panel1.Location = New System.Drawing.Point(275, 593)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(325, 47)
+        Me.Panel1.TabIndex = 62
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.RadioButton5)
+        Me.Panel2.Controls.Add(Me.RadioButton3)
+        Me.Panel2.Controls.Add(Me.RadioButton4)
+        Me.Panel2.Enabled = False
+        Me.Panel2.Location = New System.Drawing.Point(272, 646)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(467, 47)
+        Me.Panel2.TabIndex = 63
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.RadioButton10)
+        Me.Panel3.Controls.Add(Me.RadioButton9)
+        Me.Panel3.Controls.Add(Me.RadioButton6)
+        Me.Panel3.Controls.Add(Me.RadioButton7)
+        Me.Panel3.Controls.Add(Me.RadioButton8)
+        Me.Panel3.Enabled = False
+        Me.Panel3.Location = New System.Drawing.Point(272, 708)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(656, 80)
+        Me.Panel3.TabIndex = 64
+        '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.CheckBox10)
+        Me.Panel4.Controls.Add(Me.CheckBox9)
+        Me.Panel4.Controls.Add(Me.CheckBox8)
+        Me.Panel4.Controls.Add(Me.CheckBox7)
+        Me.Panel4.Controls.Add(Me.CheckBox6)
+        Me.Panel4.Controls.Add(Me.CheckBox5)
+        Me.Panel4.Controls.Add(Me.CheckBox4)
+        Me.Panel4.Controls.Add(Me.CheckBox3)
+        Me.Panel4.Controls.Add(Me.CheckBox2)
+        Me.Panel4.Enabled = False
+        Me.Panel4.Location = New System.Drawing.Point(262, 803)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(917, 124)
+        Me.Panel4.TabIndex = 65
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(963, 193)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(169, 20)
+        Me.TextBox1.TabIndex = 66
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Controls.Add(Me.RadioButton17)
-        Me.Controls.Add(Me.RadioButton18)
-        Me.Controls.Add(Me.RadioButton19)
-        Me.Controls.Add(Me.RadioButton14)
-        Me.Controls.Add(Me.RadioButton15)
-        Me.Controls.Add(Me.RadioButton16)
-        Me.Controls.Add(Me.RadioButton11)
-        Me.Controls.Add(Me.RadioButton12)
-        Me.Controls.Add(Me.RadioButton13)
+        Me.ClientSize = New System.Drawing.Size(1564, 1041)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.RadioButton10)
-        Me.Controls.Add(Me.RadioButton9)
-        Me.Controls.Add(Me.RadioButton6)
-        Me.Controls.Add(Me.RadioButton7)
-        Me.Controls.Add(Me.RadioButton8)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.RadioButton5)
-        Me.Controls.Add(Me.RadioButton3)
-        Me.Controls.Add(Me.RadioButton4)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Label6)
@@ -532,9 +586,19 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Panel1)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "One Piece Flow - Somtrack Entry"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -566,14 +630,19 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents RadioButton9 As RadioButton
     Friend WithEvents RadioButton10 As RadioButton
-    Friend WithEvents RadioButton11 As RadioButton
-    Friend WithEvents RadioButton12 As RadioButton
-    Friend WithEvents RadioButton13 As RadioButton
     Friend WithEvents Label10 As Label
-    Friend WithEvents RadioButton14 As RadioButton
-    Friend WithEvents RadioButton15 As RadioButton
-    Friend WithEvents RadioButton16 As RadioButton
-    Friend WithEvents RadioButton17 As RadioButton
-    Friend WithEvents RadioButton18 As RadioButton
-    Friend WithEvents RadioButton19 As RadioButton
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents TextBox1 As TextBox
 End Class
