@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -42,7 +43,6 @@ Partial Class Form1
         Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton4 = New System.Windows.Forms.RadioButton()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.RadioButton5 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
         Me.RadioButton7 = New System.Windows.Forms.RadioButton()
         Me.RadioButton8 = New System.Windows.Forms.RadioButton()
@@ -64,6 +64,9 @@ Partial Class Form1
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -121,9 +124,9 @@ Partial Class Form1
         Me.Label15.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label15.Location = New System.Drawing.Point(89, 299)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(611, 181)
+        Me.Label15.Size = New System.Drawing.Size(120, 181)
         Me.Label15.TabIndex = 20
-        Me.Label15.Text = "325632"
+        Me.Label15.Text = " "
         '
         'Label3
         '
@@ -132,9 +135,9 @@ Partial Class Form1
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label3.Location = New System.Drawing.Point(680, 358)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(783, 108)
+        Me.Label3.Size = New System.Drawing.Size(71, 108)
         Me.Label3.TabIndex = 21
-        Me.Label3.Text = "Somno Dent Flex"
+        Me.Label3.Text = " "
         '
         'ComboBox1
         '
@@ -230,6 +233,7 @@ Partial Class Form1
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton1.ForeColor = System.Drawing.Color.White
         Me.RadioButton1.Location = New System.Drawing.Point(9, 9)
@@ -243,6 +247,7 @@ Partial Class Form1
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton2.ForeColor = System.Drawing.Color.White
         Me.RadioButton2.Location = New System.Drawing.Point(187, 9)
@@ -256,27 +261,29 @@ Partial Class Form1
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton3.ForeColor = System.Drawing.Color.White
-        Me.RadioButton3.Location = New System.Drawing.Point(190, 8)
+        Me.RadioButton3.Location = New System.Drawing.Point(12, 8)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(82, 29)
+        Me.RadioButton3.Size = New System.Drawing.Size(97, 29)
         Me.RadioButton3.TabIndex = 35
         Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Demo"
+        Me.RadioButton3.Text = "Regular"
         Me.RadioButton3.UseVisualStyleBackColor = True
         '
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
+        Me.RadioButton4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton4.ForeColor = System.Drawing.Color.White
-        Me.RadioButton4.Location = New System.Drawing.Point(12, 8)
+        Me.RadioButton4.Location = New System.Drawing.Point(190, 8)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(97, 29)
+        Me.RadioButton4.Size = New System.Drawing.Size(82, 29)
         Me.RadioButton4.TabIndex = 34
         Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Regular"
+        Me.RadioButton4.Text = "Demo"
         Me.RadioButton4.UseVisualStyleBackColor = True
         '
         'Label8
@@ -291,22 +298,10 @@ Partial Class Form1
         Me.Label8.TabIndex = 33
         Me.Label8.Text = "Sub Category :"
         '
-        'RadioButton5
-        '
-        Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
-        Me.RadioButton5.ForeColor = System.Drawing.Color.White
-        Me.RadioButton5.Location = New System.Drawing.Point(375, 8)
-        Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(77, 29)
-        Me.RadioButton5.TabIndex = 36
-        Me.RadioButton5.TabStop = True
-        Me.RadioButton5.Text = "None"
-        Me.RadioButton5.UseVisualStyleBackColor = True
-        '
         'RadioButton6
         '
         Me.RadioButton6.AutoSize = True
+        Me.RadioButton6.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton6.ForeColor = System.Drawing.Color.White
         Me.RadioButton6.Location = New System.Drawing.Point(375, 3)
@@ -320,6 +315,7 @@ Partial Class Form1
         'RadioButton7
         '
         Me.RadioButton7.AutoSize = True
+        Me.RadioButton7.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton7.ForeColor = System.Drawing.Color.White
         Me.RadioButton7.Location = New System.Drawing.Point(190, 3)
@@ -333,6 +329,7 @@ Partial Class Form1
         'RadioButton8
         '
         Me.RadioButton8.AutoSize = True
+        Me.RadioButton8.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton8.ForeColor = System.Drawing.Color.White
         Me.RadioButton8.Location = New System.Drawing.Point(12, 3)
@@ -358,6 +355,7 @@ Partial Class Form1
         'RadioButton9
         '
         Me.RadioButton9.AutoSize = True
+        Me.RadioButton9.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton9.ForeColor = System.Drawing.Color.White
         Me.RadioButton9.Location = New System.Drawing.Point(12, 38)
@@ -371,6 +369,7 @@ Partial Class Form1
         'RadioButton10
         '
         Me.RadioButton10.AutoSize = True
+        Me.RadioButton10.FlatAppearance.CheckedBackColor = System.Drawing.Color.DimGray
         Me.RadioButton10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.RadioButton10.ForeColor = System.Drawing.Color.White
         Me.RadioButton10.Location = New System.Drawing.Point(375, 38)
@@ -513,7 +512,6 @@ Partial Class Form1
         '
         'Panel2
         '
-        Me.Panel2.Controls.Add(Me.RadioButton5)
         Me.Panel2.Controls.Add(Me.RadioButton3)
         Me.Panel2.Controls.Add(Me.RadioButton4)
         Me.Panel2.Enabled = False
@@ -554,18 +552,46 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(963, 193)
+        Me.TextBox1.Location = New System.Drawing.Point(170, 150)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(169, 20)
         Me.TextBox1.TabIndex = 66
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.LightGray
+        Me.Button1.Enabled = False
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button1.Location = New System.Drawing.Point(808, 959)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(165, 49)
+        Me.Button1.TabIndex = 67
+        Me.Button1.Text = "Queue"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.LightGray
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button2.Location = New System.Drawing.Point(1587, 959)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(165, 49)
+        Me.Button2.TabIndex = 68
+        Me.Button2.Text = "Clear / Cancel"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(26, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1564, 1041)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(1784, 1041)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -587,6 +613,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.TextBox1)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "One Piece Flow - Somtrack Entry"
@@ -623,7 +650,6 @@ Partial Class Form1
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton4 As RadioButton
     Friend WithEvents Label8 As Label
-    Friend WithEvents RadioButton5 As RadioButton
     Friend WithEvents RadioButton6 As RadioButton
     Friend WithEvents RadioButton7 As RadioButton
     Friend WithEvents RadioButton8 As RadioButton
@@ -645,4 +671,7 @@ Partial Class Form1
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Timer1 As Timer
 End Class

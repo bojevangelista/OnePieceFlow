@@ -3,7 +3,10 @@
 
 Public Class Form1
     Dim ActiveStation = 0
-    Dim TableSet = My.Computer.FileSystem.ReadAllText("C:\Users\Programmer\Documents\OPF-TableNo.txt")
+    Dim user = Environment.UserName
+    Dim TableSet = My.Computer.FileSystem.ReadAllText("C:\Users\" + user + "\Documents\OPF-TableNo.txt")
+
+    Dim con2 As SqlConnection = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMProduction;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
 
     Private Sub ChangeEmployee(e, f, g)
         '''''''VARIABLES'''''''
@@ -53,6 +56,37 @@ Public Class Form1
     Private Sub Clock_Tick(sender As Object, e As EventArgs) Handles Clock.Tick
         Label1.Text = Format(Now, "hh:mm:ss")
         Label2.Text = Format(Now, "MMMM dd, yyyy")
+
+        '''''''CHECK TABLE GOAL'''''''''''
+        Dim TableGoal As String = "Select (DateDiff(Minute, [TableSetTimeIn], GETDATE()) / 20) As goal From [SMProduction].[dbo].[TableSet] as TS Where TS.TableID = @TS And TS.TableSetStatus = 1"
+        Dim TableGoalQuery As SqlCommand = New SqlCommand(TableGoal, con2)
+            TableGoalQuery.Parameters.AddWithValue("@TS", TableSet)
+            con2.Open()
+            Using reader As SqlDataReader = TableGoalQuery.ExecuteReader()
+                If reader.HasRows Then
+                    While reader.Read()
+                        Label79.Text = reader.Item("goal")
+                    End While
+
+                End If
+            End Using
+            con2.Close()
+
+        '''''''CHECK TABLE DONE'''''''''''
+        Dim TableAchieved As String = "SELECT COUNT(SomtrackID) as achieved FROM [SMProduction].[dbo].[ProductionHead] WHERE TableNo = @TS AND StationID = 0"
+        Dim TableAchievedQuery As SqlCommand = New SqlCommand(TableAchieved, con2)
+        TableAchievedQuery.Parameters.AddWithValue("@TS", TableSet)
+        con2.Open()
+        Using reader As SqlDataReader = TableAchievedQuery.ExecuteReader()
+            If reader.HasRows Then
+                While reader.Read()
+                    Label77.Text = reader.Item("achieved")
+                End While
+
+            End If
+        End Using
+        con2.Close()
+
     End Sub
     Private Sub GetTableDetails()
         '''''''VARIABLES'''''''
