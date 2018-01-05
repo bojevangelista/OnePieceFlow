@@ -30,7 +30,6 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Button29 = New System.Windows.Forms.Button()
         Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -39,11 +38,9 @@ Partial Class Form1
         Me.Label16 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button30 = New System.Windows.Forms.Button()
         Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -53,12 +50,10 @@ Partial Class Form1
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Button17 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
         Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button31 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -71,7 +66,6 @@ Partial Class Form1
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Button32 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -81,7 +75,6 @@ Partial Class Form1
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Button33 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Label43 = New System.Windows.Forms.Label()
@@ -93,7 +86,6 @@ Partial Class Form1
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Button34 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Label28 = New System.Windows.Forms.Label()
@@ -101,11 +93,9 @@ Partial Class Form1
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.Button10 = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Button35 = New System.Windows.Forms.Button()
         Me.Button20 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Label72 = New System.Windows.Forms.Label()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.Label73 = New System.Windows.Forms.Label()
@@ -119,7 +109,6 @@ Partial Class Form1
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Button36 = New System.Windows.Forms.Button()
         Me.Button21 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Label63 = New System.Windows.Forms.Label()
@@ -134,7 +123,6 @@ Partial Class Form1
         Me.Button37 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Label67 = New System.Windows.Forms.Label()
-        Me.Button9 = New System.Windows.Forms.Button()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.Label68 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -186,6 +174,30 @@ Partial Class Form1
         Me.Label78 = New System.Windows.Forms.Label()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.ComboBox14 = New System.Windows.Forms.ComboBox()
+        Me.Label83 = New System.Windows.Forms.Label()
+        Me.Label82 = New System.Windows.Forms.Label()
+        Me.Label84 = New System.Windows.Forms.Label()
+        Me.Label85 = New System.Windows.Forms.Label()
+        Me.Label86 = New System.Windows.Forms.Label()
+        Me.Label87 = New System.Windows.Forms.Label()
+        Me.Label88 = New System.Windows.Forms.Label()
+        Me.Label89 = New System.Windows.Forms.Label()
+        Me.Label90 = New System.Windows.Forms.Label()
+        Me.Label91 = New System.Windows.Forms.Label()
+        Me.Label92 = New System.Windows.Forms.Label()
+        Me.Label93 = New System.Windows.Forms.Label()
+        Me.Label94 = New System.Windows.Forms.Label()
+        Me.Label95 = New System.Windows.Forms.Label()
+        Me.Label96 = New System.Windows.Forms.Label()
+        Me.Label97 = New System.Windows.Forms.Label()
+        Me.Label98 = New System.Windows.Forms.Label()
+        Me.Label99 = New System.Windows.Forms.Label()
+        Me.Label100 = New System.Windows.Forms.Label()
+        Me.Label101 = New System.Windows.Forms.Label()
+        Me.Label102 = New System.Windows.Forms.Label()
+        Me.Label103 = New System.Windows.Forms.Label()
+        Me.Label104 = New System.Windows.Forms.Label()
+        Me.Label105 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -248,9 +260,10 @@ Partial Class Form1
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.Controls.Add(Me.Label82)
+        Me.Panel1.Controls.Add(Me.Label83)
         Me.Panel1.Controls.Add(Me.Button29)
         Me.Panel1.Controls.Add(Me.Button14)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label20)
         Me.Panel1.Controls.Add(Me.Label19)
         Me.Panel1.Controls.Add(Me.Label18)
@@ -284,17 +297,6 @@ Partial Class Form1
         Me.Button14.TabIndex = 25
         Me.Button14.Text = "Sign In"
         Me.Button14.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(148, 21)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(89, 45)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Break Time"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label20
         '
@@ -384,23 +386,13 @@ Partial Class Form1
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Station 01"
         '
-        'Button11
-        '
-        Me.Button11.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.Location = New System.Drawing.Point(149, 21)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(89, 45)
-        Me.Button11.TabIndex = 18
-        Me.Button11.Text = "Break Time"
-        Me.Button11.UseVisualStyleBackColor = False
-        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel2.Controls.Add(Me.Label84)
+        Me.Panel2.Controls.Add(Me.Label85)
         Me.Panel2.Controls.Add(Me.Button30)
         Me.Panel2.Controls.Add(Me.Button15)
-        Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.Label32)
         Me.Panel2.Controls.Add(Me.PictureBox5)
         Me.Panel2.Controls.Add(Me.Label33)
@@ -434,17 +426,6 @@ Partial Class Form1
         Me.Button15.TabIndex = 32
         Me.Button15.Text = "Sign In"
         Me.Button15.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(148, 19)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(89, 45)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Break Time"
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'Label32
         '
@@ -546,17 +527,6 @@ Partial Class Form1
         Me.Button17.Text = "Sign In"
         Me.Button17.UseVisualStyleBackColor = False
         '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.Location = New System.Drawing.Point(153, 21)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(89, 45)
-        Me.Button12.TabIndex = 19
-        Me.Button12.Text = "Break Time"
-        Me.Button12.UseVisualStyleBackColor = False
-        '
         'ComboBox5
         '
         Me.ComboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
@@ -573,9 +543,10 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel3.Controls.Add(Me.Label86)
+        Me.Panel3.Controls.Add(Me.Label87)
         Me.Panel3.Controls.Add(Me.Button31)
         Me.Panel3.Controls.Add(Me.Button16)
-        Me.Panel3.Controls.Add(Me.Button3)
         Me.Panel3.Controls.Add(Me.Label37)
         Me.Panel3.Controls.Add(Me.PictureBox6)
         Me.Panel3.Controls.Add(Me.Label38)
@@ -609,17 +580,6 @@ Partial Class Form1
         Me.Button16.TabIndex = 39
         Me.Button16.Text = "Sign In"
         Me.Button16.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(149, 19)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(89, 45)
-        Me.Button3.TabIndex = 7
-        Me.Button3.Text = "Break Time"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'Label37
         '
@@ -669,7 +629,7 @@ Partial Class Form1
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label39.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label39.Location = New System.Drawing.Point(81, 128)
+        Me.Label39.Location = New System.Drawing.Point(81, 129)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(17, 25)
         Me.Label39.TabIndex = 50
@@ -737,8 +697,9 @@ Partial Class Form1
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel4.Controls.Add(Me.Label88)
+        Me.Panel4.Controls.Add(Me.Label89)
         Me.Panel4.Controls.Add(Me.Button32)
-        Me.Panel4.Controls.Add(Me.Button4)
         Me.Panel4.Controls.Add(Me.Button17)
         Me.Panel4.Controls.Add(Me.Label22)
         Me.Panel4.Controls.Add(Me.PictureBox3)
@@ -762,17 +723,6 @@ Partial Class Form1
         Me.Button32.Text = "Edit Flow"
         Me.Button32.UseVisualStyleBackColor = True
         Me.Button32.Visible = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(149, 21)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(89, 45)
-        Me.Button4.TabIndex = 8
-        Me.Button4.Text = "Break Time"
-        Me.Button4.UseVisualStyleBackColor = False
         '
         'Label22
         '
@@ -853,9 +803,10 @@ Partial Class Form1
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel5.Controls.Add(Me.Label90)
+        Me.Panel5.Controls.Add(Me.Label91)
         Me.Panel5.Controls.Add(Me.Button33)
         Me.Panel5.Controls.Add(Me.Button18)
-        Me.Panel5.Controls.Add(Me.Button5)
         Me.Panel5.Controls.Add(Me.Label42)
         Me.Panel5.Controls.Add(Me.PictureBox7)
         Me.Panel5.Controls.Add(Me.Label43)
@@ -878,17 +829,6 @@ Partial Class Form1
         Me.Button33.Text = "Edit Flow"
         Me.Button33.UseVisualStyleBackColor = True
         Me.Button33.Visible = False
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(152, 19)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(89, 45)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "Break Time"
-        Me.Button5.UseVisualStyleBackColor = False
         '
         'Label42
         '
@@ -938,7 +878,7 @@ Partial Class Form1
         Me.Label44.AutoSize = True
         Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label44.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label44.Location = New System.Drawing.Point(81, 128)
+        Me.Label44.Location = New System.Drawing.Point(81, 129)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(17, 25)
         Me.Label44.TabIndex = 64
@@ -993,9 +933,10 @@ Partial Class Form1
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel6.Controls.Add(Me.Label92)
+        Me.Panel6.Controls.Add(Me.Label93)
         Me.Panel6.Controls.Add(Me.Button34)
         Me.Panel6.Controls.Add(Me.Button19)
-        Me.Panel6.Controls.Add(Me.Button6)
         Me.Panel6.Controls.Add(Me.Label27)
         Me.Panel6.Controls.Add(Me.PictureBox4)
         Me.Panel6.Controls.Add(Me.Label28)
@@ -1018,17 +959,6 @@ Partial Class Form1
         Me.Button34.Text = "Edit Flow"
         Me.Button34.UseVisualStyleBackColor = True
         Me.Button34.Visible = False
-        '
-        'Button6
-        '
-        Me.Button6.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(152, 21)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(89, 45)
-        Me.Button6.TabIndex = 12
-        Me.Button6.Text = "Break Time"
-        Me.Button6.UseVisualStyleBackColor = False
         '
         'Label27
         '
@@ -1106,23 +1036,13 @@ Partial Class Form1
         Me.Label31.TabIndex = 33
         Me.Label31.Text = "Employee Name"
         '
-        'Button10
-        '
-        Me.Button10.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.Location = New System.Drawing.Point(153, 19)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(89, 45)
-        Me.Button10.TabIndex = 17
-        Me.Button10.Text = "Break Time"
-        Me.Button10.UseVisualStyleBackColor = False
-        '
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel7.Controls.Add(Me.Label94)
+        Me.Panel7.Controls.Add(Me.Label95)
         Me.Panel7.Controls.Add(Me.Button35)
         Me.Panel7.Controls.Add(Me.Button20)
-        Me.Panel7.Controls.Add(Me.Button7)
         Me.Panel7.Controls.Add(Me.Label72)
         Me.Panel7.Controls.Add(Me.PictureBox13)
         Me.Panel7.Controls.Add(Me.Label73)
@@ -1156,17 +1076,6 @@ Partial Class Form1
         Me.Button20.TabIndex = 74
         Me.Button20.Text = "Sign In"
         Me.Button20.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(152, 19)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(89, 45)
-        Me.Button7.TabIndex = 14
-        Me.Button7.Text = "Break Time"
-        Me.Button7.UseVisualStyleBackColor = False
         '
         'Label72
         '
@@ -1216,7 +1125,7 @@ Partial Class Form1
         Me.Label74.AutoSize = True
         Me.Label74.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!)
         Me.Label74.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.Label74.Location = New System.Drawing.Point(81, 128)
+        Me.Label74.Location = New System.Drawing.Point(81, 129)
         Me.Label74.Name = "Label74"
         Me.Label74.Size = New System.Drawing.Size(17, 25)
         Me.Label74.TabIndex = 106
@@ -1283,9 +1192,10 @@ Partial Class Form1
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel8.Controls.Add(Me.Label96)
+        Me.Panel8.Controls.Add(Me.Label97)
         Me.Panel8.Controls.Add(Me.Button36)
         Me.Panel8.Controls.Add(Me.Button21)
-        Me.Panel8.Controls.Add(Me.Button8)
         Me.Panel8.Controls.Add(Me.Label62)
         Me.Panel8.Controls.Add(Me.PictureBox11)
         Me.Panel8.Controls.Add(Me.Label63)
@@ -1319,17 +1229,6 @@ Partial Class Form1
         Me.Button21.TabIndex = 81
         Me.Button21.Text = "Sign In"
         Me.Button21.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(152, 19)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(89, 45)
-        Me.Button8.TabIndex = 15
-        Me.Button8.Text = "Break Time"
-        Me.Button8.UseVisualStyleBackColor = False
         '
         'Label62
         '
@@ -1447,10 +1346,11 @@ Partial Class Form1
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel9.Controls.Add(Me.Label98)
+        Me.Panel9.Controls.Add(Me.Label99)
         Me.Panel9.Controls.Add(Me.Button37)
         Me.Panel9.Controls.Add(Me.Button22)
         Me.Panel9.Controls.Add(Me.Label67)
-        Me.Panel9.Controls.Add(Me.Button9)
         Me.Panel9.Controls.Add(Me.PictureBox12)
         Me.Panel9.Controls.Add(Me.Label68)
         Me.Panel9.Controls.Add(Me.Label13)
@@ -1494,17 +1394,6 @@ Partial Class Form1
         Me.Label67.Size = New System.Drawing.Size(17, 25)
         Me.Label67.TabIndex = 101
         Me.Label67.Text = " "
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.LawnGreen
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(149, 21)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(89, 45)
-        Me.Button9.TabIndex = 16
-        Me.Button9.Text = "Break Time"
-        Me.Button9.UseVisualStyleBackColor = False
         '
         'PictureBox12
         '
@@ -1611,8 +1500,9 @@ Partial Class Form1
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel10.Controls.Add(Me.Label100)
+        Me.Panel10.Controls.Add(Me.Label101)
         Me.Panel10.Controls.Add(Me.Button38)
-        Me.Panel10.Controls.Add(Me.Button10)
         Me.Panel10.Controls.Add(Me.Button23)
         Me.Panel10.Controls.Add(Me.Label52)
         Me.Panel10.Controls.Add(Me.PictureBox9)
@@ -1716,6 +1606,8 @@ Partial Class Form1
         'Panel11
         '
         Me.Panel11.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel11.Controls.Add(Me.Label102)
+        Me.Panel11.Controls.Add(Me.Label103)
         Me.Panel11.Controls.Add(Me.Button39)
         Me.Panel11.Controls.Add(Me.Label57)
         Me.Panel11.Controls.Add(Me.Button24)
@@ -1723,7 +1615,6 @@ Partial Class Form1
         Me.Panel11.Controls.Add(Me.Label58)
         Me.Panel11.Controls.Add(Me.Label11)
         Me.Panel11.Controls.Add(Me.Label59)
-        Me.Panel11.Controls.Add(Me.Button11)
         Me.Panel11.Controls.Add(Me.Label60)
         Me.Panel11.Controls.Add(Me.ComboBox12)
         Me.Panel11.Controls.Add(Me.Label61)
@@ -1821,8 +1712,9 @@ Partial Class Form1
         'Panel12
         '
         Me.Panel12.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel12.Controls.Add(Me.Label104)
+        Me.Panel12.Controls.Add(Me.Label105)
         Me.Panel12.Controls.Add(Me.Button40)
-        Me.Panel12.Controls.Add(Me.Button12)
         Me.Panel12.Controls.Add(Me.Button25)
         Me.Panel12.Controls.Add(Me.Label47)
         Me.Panel12.Controls.Add(Me.PictureBox8)
@@ -1983,12 +1875,12 @@ Partial Class Form1
         'Button27
         '
         Me.Button27.BackColor = System.Drawing.Color.LightGray
-        Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button27.Location = New System.Drawing.Point(1557, 308)
+        Me.Button27.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.Button27.Location = New System.Drawing.Point(1778, 6)
         Me.Button27.Name = "Button27"
-        Me.Button27.Size = New System.Drawing.Size(118, 39)
+        Me.Button27.Size = New System.Drawing.Size(120, 40)
         Me.Button27.TabIndex = 18
-        Me.Button27.Text = "Break All"
+        Me.Button27.Text = "Somtrack Entry"
         Me.Button27.UseVisualStyleBackColor = False
         '
         'Button28
@@ -2081,19 +1973,283 @@ Partial Class Form1
         Me.ComboBox14.TabIndex = 26
         Me.ComboBox14.Visible = False
         '
+        'Label83
+        '
+        Me.Label83.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label83.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label83.Location = New System.Drawing.Point(113, 4)
+        Me.Label83.Name = "Label83"
+        Me.Label83.Size = New System.Drawing.Size(39, 39)
+        Me.Label83.TabIndex = 27
+        Me.Label83.Text = "0"
+        Me.Label83.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label82
+        '
+        Me.Label82.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label82.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label82.Location = New System.Drawing.Point(114, 44)
+        Me.Label82.Name = "Label82"
+        Me.Label82.Size = New System.Drawing.Size(39, 39)
+        Me.Label82.TabIndex = 28
+        Me.Label82.Text = "0"
+        Me.Label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label84
+        '
+        Me.Label84.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label84.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label84.Location = New System.Drawing.Point(113, 44)
+        Me.Label84.Name = "Label84"
+        Me.Label84.Size = New System.Drawing.Size(39, 39)
+        Me.Label84.TabIndex = 48
+        Me.Label84.Text = "0"
+        Me.Label84.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label85
+        '
+        Me.Label85.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label85.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label85.Location = New System.Drawing.Point(112, 4)
+        Me.Label85.Name = "Label85"
+        Me.Label85.Size = New System.Drawing.Size(39, 39)
+        Me.Label85.TabIndex = 47
+        Me.Label85.Text = "0"
+        Me.Label85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label86
+        '
+        Me.Label86.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label86.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label86.Location = New System.Drawing.Point(114, 44)
+        Me.Label86.Name = "Label86"
+        Me.Label86.Size = New System.Drawing.Size(39, 39)
+        Me.Label86.TabIndex = 55
+        Me.Label86.Text = "0"
+        Me.Label86.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label87
+        '
+        Me.Label87.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label87.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label87.Location = New System.Drawing.Point(113, 4)
+        Me.Label87.Name = "Label87"
+        Me.Label87.Size = New System.Drawing.Size(39, 39)
+        Me.Label87.TabIndex = 54
+        Me.Label87.Text = "0"
+        Me.Label87.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label88
+        '
+        Me.Label88.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label88.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label88.Location = New System.Drawing.Point(114, 44)
+        Me.Label88.Name = "Label88"
+        Me.Label88.Size = New System.Drawing.Size(39, 39)
+        Me.Label88.TabIndex = 56
+        Me.Label88.Text = "0"
+        Me.Label88.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label89
+        '
+        Me.Label89.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label89.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label89.Location = New System.Drawing.Point(113, 4)
+        Me.Label89.Name = "Label89"
+        Me.Label89.Size = New System.Drawing.Size(39, 39)
+        Me.Label89.TabIndex = 55
+        Me.Label89.Text = "0"
+        Me.Label89.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label90
+        '
+        Me.Label90.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label90.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label90.Location = New System.Drawing.Point(114, 44)
+        Me.Label90.Name = "Label90"
+        Me.Label90.Size = New System.Drawing.Size(39, 39)
+        Me.Label90.TabIndex = 69
+        Me.Label90.Text = "0"
+        Me.Label90.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label91
+        '
+        Me.Label91.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label91.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label91.Location = New System.Drawing.Point(113, 4)
+        Me.Label91.Name = "Label91"
+        Me.Label91.Size = New System.Drawing.Size(39, 39)
+        Me.Label91.TabIndex = 68
+        Me.Label91.Text = "0"
+        Me.Label91.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label92
+        '
+        Me.Label92.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label92.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label92.Location = New System.Drawing.Point(114, 44)
+        Me.Label92.Name = "Label92"
+        Me.Label92.Size = New System.Drawing.Size(39, 39)
+        Me.Label92.TabIndex = 70
+        Me.Label92.Text = "0"
+        Me.Label92.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label93
+        '
+        Me.Label93.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label93.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label93.Location = New System.Drawing.Point(113, 4)
+        Me.Label93.Name = "Label93"
+        Me.Label93.Size = New System.Drawing.Size(39, 39)
+        Me.Label93.TabIndex = 69
+        Me.Label93.Text = "0"
+        Me.Label93.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label94
+        '
+        Me.Label94.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label94.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label94.Location = New System.Drawing.Point(114, 44)
+        Me.Label94.Name = "Label94"
+        Me.Label94.Size = New System.Drawing.Size(39, 39)
+        Me.Label94.TabIndex = 111
+        Me.Label94.Text = "0"
+        Me.Label94.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label95
+        '
+        Me.Label95.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label95.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label95.Location = New System.Drawing.Point(113, 4)
+        Me.Label95.Name = "Label95"
+        Me.Label95.Size = New System.Drawing.Size(39, 39)
+        Me.Label95.TabIndex = 110
+        Me.Label95.Text = "0"
+        Me.Label95.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label96
+        '
+        Me.Label96.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label96.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label96.Location = New System.Drawing.Point(114, 44)
+        Me.Label96.Name = "Label96"
+        Me.Label96.Size = New System.Drawing.Size(39, 39)
+        Me.Label96.TabIndex = 97
+        Me.Label96.Text = "0"
+        Me.Label96.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label97
+        '
+        Me.Label97.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label97.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label97.Location = New System.Drawing.Point(113, 4)
+        Me.Label97.Name = "Label97"
+        Me.Label97.Size = New System.Drawing.Size(39, 39)
+        Me.Label97.TabIndex = 96
+        Me.Label97.Text = "0"
+        Me.Label97.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label98
+        '
+        Me.Label98.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label98.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label98.Location = New System.Drawing.Point(114, 44)
+        Me.Label98.Name = "Label98"
+        Me.Label98.Size = New System.Drawing.Size(39, 39)
+        Me.Label98.TabIndex = 104
+        Me.Label98.Text = "0"
+        Me.Label98.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label99
+        '
+        Me.Label99.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label99.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label99.Location = New System.Drawing.Point(113, 4)
+        Me.Label99.Name = "Label99"
+        Me.Label99.Size = New System.Drawing.Size(39, 39)
+        Me.Label99.TabIndex = 103
+        Me.Label99.Text = "0"
+        Me.Label99.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label100
+        '
+        Me.Label100.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label100.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label100.Location = New System.Drawing.Point(114, 44)
+        Me.Label100.Name = "Label100"
+        Me.Label100.Size = New System.Drawing.Size(39, 39)
+        Me.Label100.TabIndex = 98
+        Me.Label100.Text = "0"
+        Me.Label100.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label101
+        '
+        Me.Label101.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label101.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label101.Location = New System.Drawing.Point(113, 4)
+        Me.Label101.Name = "Label101"
+        Me.Label101.Size = New System.Drawing.Size(39, 39)
+        Me.Label101.TabIndex = 97
+        Me.Label101.Text = "0"
+        Me.Label101.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label102
+        '
+        Me.Label102.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label102.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label102.Location = New System.Drawing.Point(113, 44)
+        Me.Label102.Name = "Label102"
+        Me.Label102.Size = New System.Drawing.Size(39, 39)
+        Me.Label102.TabIndex = 105
+        Me.Label102.Text = "0"
+        Me.Label102.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label103
+        '
+        Me.Label103.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label103.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label103.Location = New System.Drawing.Point(112, 4)
+        Me.Label103.Name = "Label103"
+        Me.Label103.Size = New System.Drawing.Size(39, 39)
+        Me.Label103.TabIndex = 104
+        Me.Label103.Text = "0"
+        Me.Label103.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label104
+        '
+        Me.Label104.BackColor = System.Drawing.Color.OrangeRed
+        Me.Label104.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label104.Location = New System.Drawing.Point(114, 44)
+        Me.Label104.Name = "Label104"
+        Me.Label104.Size = New System.Drawing.Size(39, 39)
+        Me.Label104.TabIndex = 112
+        Me.Label104.Text = "0"
+        Me.Label104.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label105
+        '
+        Me.Label105.BackColor = System.Drawing.Color.LimeGreen
+        Me.Label105.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!)
+        Me.Label105.Location = New System.Drawing.Point(113, 4)
+        Me.Label105.Name = "Label105"
+        Me.Label105.Size = New System.Drawing.Size(39, 39)
+        Me.Label105.TabIndex = 111
+        Me.Label105.Text = "0"
+        Me.Label105.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(26, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
+        Me.Controls.Add(Me.Button27)
         Me.Controls.Add(Me.ComboBox14)
         Me.Controls.Add(Me.Label81)
         Me.Controls.Add(Me.Label80)
         Me.Controls.Add(Me.Label79)
         Me.Controls.Add(Me.Label77)
         Me.Controls.Add(Me.Button28)
-        Me.Controls.Add(Me.Button27)
         Me.Controls.Add(Me.Button26)
         Me.Controls.Add(Me.Label21)
         Me.Controls.Add(Me.ComboBox1)
@@ -2198,20 +2354,8 @@ Partial Class Form1
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents Label16 As Label
-    Friend WithEvents Button11 As Button
-    Friend WithEvents Button12 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
     Friend WithEvents Button13 As Button
     Friend WithEvents Label15 As Label
     Friend WithEvents ComboBox1 As ComboBox
@@ -2321,4 +2465,28 @@ Partial Class Form1
     Friend WithEvents Button40 As Button
     Friend WithEvents Timer3 As Timer
     Friend WithEvents ComboBox14 As ComboBox
+    Friend WithEvents Label82 As Label
+    Friend WithEvents Label83 As Label
+    Friend WithEvents Label84 As Label
+    Friend WithEvents Label85 As Label
+    Friend WithEvents Label86 As Label
+    Friend WithEvents Label87 As Label
+    Friend WithEvents Label88 As Label
+    Friend WithEvents Label89 As Label
+    Friend WithEvents Label90 As Label
+    Friend WithEvents Label91 As Label
+    Friend WithEvents Label92 As Label
+    Friend WithEvents Label93 As Label
+    Friend WithEvents Label94 As Label
+    Friend WithEvents Label95 As Label
+    Friend WithEvents Label96 As Label
+    Friend WithEvents Label97 As Label
+    Friend WithEvents Label98 As Label
+    Friend WithEvents Label99 As Label
+    Friend WithEvents Label100 As Label
+    Friend WithEvents Label101 As Label
+    Friend WithEvents Label102 As Label
+    Friend WithEvents Label103 As Label
+    Friend WithEvents Label104 As Label
+    Friend WithEvents Label105 As Label
 End Class
