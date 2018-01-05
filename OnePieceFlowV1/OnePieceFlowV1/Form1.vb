@@ -6,6 +6,7 @@ Public Class Form1
     Dim user = Environment.UserName
     Dim TableSet = My.Computer.FileSystem.ReadAllText("C:\Users\" + user + "\Documents\OPF-TableNo.txt")
     Public TransferCase
+    Dim s1case = 0
     Dim s2case = 0
     Dim s3case = 0
     Dim s4case = 0
@@ -57,7 +58,6 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         GetLeadman()
         GetTableDetails()
         If (Button13.Text = "Release") Then
@@ -72,7 +72,7 @@ Public Class Form1
 
         Dim TableSetID = 0
         '''''''QUERY FOR SELECTING ACTIVE TABLE'''''''''''
-        Dim TableSetIDquery As String = "SELECT TableSetID FROM [SMProduction].[dbo].[TableSet] WHERE TableID = @TS AND TableSetStatus = 1"
+        Dim TableSetIDquery As String = "SELECT TableSetID, TableSetName FROM [SMProduction].[dbo].[TableSet] WHERE TableID = @TS AND TableSetStatus = 1"
         Dim TableSetIDquerycmd As SqlCommand = New SqlCommand(TableSetIDquery, con3)
         TableSetIDquerycmd.Parameters.AddWithValue("@TS", TableSet)
         con3.Open()
@@ -80,6 +80,7 @@ Public Class Form1
             If reader.HasRows Then
                 While reader.Read()
                     TableSetID = reader.Item("TableSetID").ToString
+                    Label21.Text = reader.Item("TableSetName").ToString
                 End While
 
             End If
@@ -121,13 +122,97 @@ Public Class Form1
         con3.Close()
         GetPending()
         GetActive()
+        GetPassedCase()
     End Sub
+    Private Sub GetPassedCase()
+
+        Label82.Text = "0"
+        Label83.Text = "0"
+        Label84.Text = "0"
+        Label85.Text = "0"
+        Label86.Text = "0"
+        Label87.Text = "0"
+        Label88.Text = "0"
+        Label89.Text = "0"
+        Label90.Text = "0"
+        Label91.Text = "0"
+        Label92.Text = "0"
+        Label93.Text = "0"
+        Label94.Text = "0"
+        Label95.Text = "0"
+        Label96.Text = "0"
+        Label97.Text = "0"
+        Label98.Text = "0"
+        Label99.Text = "0"
+        Label100.Text = "0"
+        Label101.Text = "0"
+        Label102.Text = "0"
+        Label103.Text = "0"
+        Label104.Text = "0"
+        Label105.Text = "0"
+
+        '''''''CHECK PASSED CASES'''''''''''
+        Dim TablePassedCase As String = "SELECT SP.StationID, SUM(CASE WHEN PD.Status = 5 THEN 1 ELSE 0 END) as Done , SUM(CASE WHEN PD.Status = 4 THEN 1 ELSE 0 END) as Redo FROM [SMProduction].[dbo].[ProductionDetails] as PD LEFT JOIN TableMembers as TM ON TM.EmployeeID = PD.EmployeeID LEFT JOIN TableSet as TS ON TS.TableSetID = TM.TableSetID LEFT JOIN StationProcess as SP ON SP.BOMDID = PD.BOMDID LEFT JOIN ProductionHead as PH ON PH.ProductionHeadID = PD.ProductionHeadID WHERE TS.TableSetStatus = 1 AND TM.TableMemberStatus = 1 AND TS.TableID = @TS AND PD.Status IN (4,5) AND SP.StationID = TM.StationID AND PD.DateEnded BETWEEN TM.TableMemberTimeIn AND GETDATE() GROUP BY SP.StationID"
+        Dim TablePassedCasQuery As SqlCommand = New SqlCommand(TablePassedCase, con2)
+        TablePassedCasQuery.Parameters.AddWithValue("@TS", TableSet)
+
+        con2.Open()
+        Using reader As SqlDataReader = TablePassedCasQuery.ExecuteReader()
+            If reader.HasRows Then
+                While reader.Read()
+                    If (reader.Item("StationID") = 1) Then
+                        Label83.Text = reader.Item("Done").ToString
+                        Label82.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 2) Then
+                        Label85.Text = reader.Item("Done").ToString
+                        Label84.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 3) Then
+                        Label87.Text = reader.Item("Done").ToString
+                        Label86.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 4) Then
+                        Label89.Text = reader.Item("Done").ToString
+                        Label88.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 5) Then
+                        Label91.Text = reader.Item("Done").ToString
+                        Label90.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 6) Then
+                        Label93.Text = reader.Item("Done").ToString
+                        Label92.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 7) Then
+                        Label95.Text = reader.Item("Done").ToString
+                        Label94.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 8) Then
+                        Label97.Text = reader.Item("Done").ToString
+                        Label96.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 9) Then
+                        Label99.Text = reader.Item("Done").ToString
+                        Label98.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 10) Then
+                        Label101.Text = reader.Item("Done").ToString
+                        Label100.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 11) Then
+                        Label103.Text = reader.Item("Done").ToString
+                        Label102.Text = reader.Item("Redo").ToString
+                    ElseIf (reader.Item("StationID") = 12) Then
+                        Label105.Text = reader.Item("Done").ToString
+                        Label104.Text = reader.Item("Redo").ToString
+                    End If
+                End While
+
+            End If
+        End Using
+        con2.Close()
+    End Sub
+
+
+
+
     Private Sub GetActive()
 
 
 
         '''''''CHECK TABLE CASES'''''''''''
-        Dim TableActiveCase As String = "Select PH.SomtrackID, PH.StationID, PH.DateStarted FROM ProductionDetails As PD LEFT JOIN StationProcess As SP On PD.BOMDID = SP.BOMDID LEFT JOIN ProductionHead As PH On PH.ProductionHeadID = PD.ProductionHeadID LEFT JOIN TableMembers As TM On TM.StationID = SP.StationID LEFT JOIN TableSet As TS On TS.TableSetID = TM.TableSetID WHERE TS.TableID = @TS And TS.TableSetStatus = 1 And TM.TableMemberStatus = 1 And PD.Status = 1 And PH.StationID Is Not NULL GROUP BY PH.SomtrackID, PH.StationID, PH.DateStarted ORDER BY PH.DateStarted ASC"
+        Dim TableActiveCase As String = "Select PH.SomtrackID, PH.StationID, PH.DateStarted FROM ProductionDetails As PD LEFT JOIN StationProcess As SP On PD.BOMDID = SP.BOMDID LEFT JOIN ProductionHead As PH On PH.ProductionHeadID = PD.ProductionHeadID LEFT JOIN TableMembers As TM On TM.StationID = SP.StationID LEFT JOIN TableSet As TS On TS.TableSetID = TM.TableSetID WHERE TS.TableID = @TS And PH.TableNo = @TS And TS.TableSetStatus = 1 And TM.TableMemberStatus = 1 And PD.Status = 1 And PH.StationID Is Not NULL GROUP BY PH.SomtrackID, PH.StationID, PH.DateStarted ORDER BY PH.DateStarted ASC"
         Dim TableActiveCaseQuery As SqlCommand = New SqlCommand(TableActiveCase, con3)
         TableActiveCaseQuery.Parameters.AddWithValue("@TS", TableSet)
 
@@ -268,7 +353,7 @@ Public Class Form1
     End Sub
     Private Sub GetPending()
 
-
+        s1case = 0
         s2case = 0
         s3case = 0
         s4case = 0
@@ -282,7 +367,7 @@ Public Class Form1
 
 
         '''''''CHECK TABLE CASES'''''''''''
-        Dim TableCase As String = "SELECT PH.SomtrackID, PH.StationID, PH.DateStarted FROM ProductionDetails as PD LEFT JOIN StationProcess as SP ON PD.BOMDID = SP.BOMDID LEFT JOIN ProductionHead as PH ON PH.ProductionHeadID = PD.ProductionHeadID LEFT JOIN TableMembers as TM ON TM.StationID = SP.StationID LEFT JOIN TableSet as TS ON TS.TableSetID = TM.TableSetID WHERE TS.TableID = @TS AND TS.TableSetStatus = 1 AND TM.TableMemberStatus = 1 AND PD.Status = 2 AND PH.StationID IS NOT NULL GROUP BY PH.SomtrackID, PH.StationID, PH.DateStarted ORDER BY PH.DateStarted ASC"
+        Dim TableCase As String = "SELECT PH.SomtrackID, PH.StationID, PH.DateStarted FROM ProductionDetails as PD LEFT JOIN StationProcess as SP ON PD.BOMDID = SP.BOMDID LEFT JOIN ProductionHead as PH ON PH.ProductionHeadID = PD.ProductionHeadID LEFT JOIN TableMembers as TM ON TM.StationID = SP.StationID LEFT JOIN TableSet as TS ON TS.TableSetID = TM.TableSetID WHERE TS.TableID = @TS AND PH.TableNo = @TS AND TS.TableSetStatus = 1 AND TM.TableMemberStatus = 1 AND PD.Status = 2 AND PH.StationID IS NOT NULL GROUP BY PH.SomtrackID, PH.StationID, PH.DateStarted ORDER BY PH.DateStarted ASC"
         Dim TableCaseQuery As SqlCommand = New SqlCommand(TableCase, con3)
         TableCaseQuery.Parameters.AddWithValue("@TS", TableSet)
 
@@ -290,7 +375,9 @@ Public Class Form1
         Using reader As SqlDataReader = TableCaseQuery.ExecuteReader()
             If reader.HasRows Then
                 While reader.Read()
-                    If (reader.Item("StationID") = 2) Then
+                    If (reader.Item("StationID") = 1) Then
+                        s1case = s1case + 1
+                    ElseIf (reader.Item("StationID") = 2) Then
                         s2case = s2case + 1
                     ElseIf (reader.Item("StationID") = 3) Then
                         s3case = s3case + 1
@@ -326,6 +413,7 @@ Public Class Form1
             End If
         End Using
 
+        Label20.Text = s1case
         Label32.Text = s2case
         Label37.Text = s3case
         Label24.Text = s4case
@@ -568,15 +656,27 @@ Public Class Form1
 
     Private Sub SignStatus(x, e, f)
         If (x.Text = "Sign In") Then
+            '''''''VARIABLES'''''''
+            Dim con As SqlConnection
+            Dim Station = f.Name.Substring(5)
+            Dim SelectedEmp = e.SelectedValue
+            Dim readTableSetID = ""
+
             If (e.Text = "") Then
                 MessageBox.Show("Employee Name cannot be empty", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
             Else
 
-                '''''''VARIABLES'''''''
-                Dim con As SqlConnection
-                Dim Station = f.Name.Substring(5, 1)
-                Dim SelectedEmp = e.SelectedValue
-                Dim readTableSetID = ""
+                If Station = 11 Then
+                    If SelectedEmp = ComboBox13.SelectedValue Then
+                        MessageBox.Show("Cannot assign same employee on both Station 11 and 12", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+                        GoTo ErrSignStatus
+                    End If
+                ElseIf Station = 12 Then
+                    If SelectedEmp = ComboBox12.SelectedValue Then
+                        MessageBox.Show("Cannot assign same employee on both Station 11 and 12", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+                        GoTo ErrSignStatus
+                    End If
+                End If
 
 
                 'SERVER'
@@ -623,6 +723,7 @@ Public Class Form1
                 e.Enabled = False
                 f.BackColor = Color.DarkSlateGray
                 ActiveStation = ActiveStation + 1
+ErrSignStatus:
             End If
         Else
 
@@ -690,11 +791,9 @@ Public Class Form1
     End Sub
 
     Private Sub Button27_Click(sender As Object, e As EventArgs) Handles Button27.Click
-        For i As Integer = 1 To 12
-            CType(CType(Me.Controls("Panel" + (i).ToString()), Panel).Controls("Button" + (i).ToString()), Button).Text = "On Break"
-            CType(CType(Me.Controls("Panel" + (i).ToString()), Panel).Controls("Button" + (i).ToString()), Button).BackColor = Color.Orange
+        Me.Hide()
+        Form3.Show()
 
-        Next
 
 
 
@@ -714,53 +813,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        BreakStatus(Button11)
-    End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        BreakStatus(Button7)
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        BreakStatus(Button1)
-    End Sub
-
-    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        BreakStatus(Button12)
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        BreakStatus(Button2)
-    End Sub
-
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        BreakStatus(Button10)
-    End Sub
-
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        BreakStatus(Button3)
-    End Sub
-
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
-        BreakStatus(Button9)
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        BreakStatus(Button4)
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        BreakStatus(Button8)
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        BreakStatus(Button5)
-    End Sub
-
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        BreakStatus(Button6)
-    End Sub
 
     Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
         SignStatus(Button14, ComboBox2, Panel1)
@@ -1036,125 +1089,98 @@ Public Class Form1
         ChangeEmployee(ComboBox13, Label49, Label47)
     End Sub
     Private Sub Label21_Click(sender As Object, e As EventArgs) Handles Label21.Click
-        '''''''VARIABLES'''''''
-        Dim con As SqlConnection
-        'SERVER'
-        con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMProduction;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
+        If (Button13.Text = "Lock In") Then
+            '''''''VARIABLES'''''''
+            Dim con As SqlConnection
+            'SERVER'
+            con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMProduction;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
 
-        con.Open()
-        '''''''CHECK FOR ACTIVE TABLE''''''
-        Dim GetActiveTable As String = "SELECT Distinct [TableSetName], MAX(TableSetID) as TableSetID FROM TableSet WHERE TableID = @TID AND TableSetStatus = 3 GROUP BY [TableSetName] ORDER BY [TableSetName] asc"
-        Dim GetActiveTableQuery As SqlCommand = New SqlCommand(GetActiveTable, con)
-        GetActiveTableQuery.Parameters.AddWithValue("@TID", TableSet)
-        Dim ActiveTable = ""
-
-        Using reader As SqlDataReader = GetActiveTableQuery.ExecuteReader()
-            Dim dt As DataTable = New DataTable
-            dt.Load(reader)
-
-            ComboBox14.DataSource = dt
-            ComboBox14.ValueMember = "TableSetID"
-            ComboBox14.DisplayMember = "TableSetName"
-
-
-        End Using
-        con.Close()
-
-        Dim con5 As SqlConnection
-        'SERVER'
-        con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMBuildLog;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
-        con5 = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMHumanResource;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
-        '''''''QUERY FOR SELECTING ROSTER'''''''''''
-        Dim empquery As String = "SELECT EN.EmployeeNumber as EmployeeID, CONCAT( [LastName], ', ', [FirstName], ' - ', EN.EmployeeNumber ) as FullName FROM [SMProduction].[dbo].[TableMembers] as TM LEFT JOIN [SMProduction].[dbo].[TableSet] as TS ON TS.TableSetID = TM.TableSetID LEFT JOIN [SMHumanResource].[dbo].[EmployeeNumber] as EN ON EN.EmployeeNumber = TM.EmployeeID LEFT JOIN [SMHumanResource].[dbo].[Employee] as E ON E.EmpID = EN.EmpID WHERE TS.TableSetID = @TSID AND StationID = @SN"
-        Dim empcmd As SqlCommand = New SqlCommand(empquery, con)
-        empcmd.Parameters.AddWithValue("@TSID", ComboBox14.SelectedValue)
-
-
-        Dim empquery2 As String = "SELECT '0' as Username, '' as Fullname UNION SELECT EN.EmployeeNumber as Username, CONCAT( E.[LastName], ', ', E.[FirstName], ' - ', EN.EmployeeNumber ) as Fullname FROM [SMHumanResource].[dbo].[Employee] as E LEFT JOIN EmployeeNumber as EN On EN.EmpID = E.EmpID WHERE E.[LastName] <> '' ORDER BY FullName"
-        Dim empcmd2 As SqlCommand = New SqlCommand(empquery2, con5)
-
-
-        For i As Integer = 2 To 13
-
-            empcmd.Parameters.Clear()
-            empcmd.Parameters.AddWithValue("@TN", TableSet)
-            empcmd.Parameters.AddWithValue("@SN", i - 1)
-            con.Close()
             con.Open()
-            Using reader As SqlDataReader = empcmd.ExecuteReader()
+            '''''''CHECK FOR ACTIVE TABLE''''''
+            Dim GetActiveTable As String = "SELECT Distinct TOP (5) [TableSetName], MAX(TableSetID) as TableSetID FROM TableSet WHERE TableID = @TID AND TableSetStatus = 3 GROUP BY [TableSetName] ORDER BY [TableSetName] asc"
+            Dim GetActiveTableQuery As SqlCommand = New SqlCommand(GetActiveTable, con)
+            GetActiveTableQuery.Parameters.AddWithValue("@TID", TableSet)
+            Dim ActiveTable = ""
 
-                If reader.HasRows Then
-                    Dim dt As DataTable = New DataTable
-                    dt.Load(reader)
+            Using reader As SqlDataReader = GetActiveTableQuery.ExecuteReader()
+                Dim dt As DataTable = New DataTable
+                dt.Load(reader)
 
-                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DataSource = dt
-                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).ValueMember = "EmployeeID"
-                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DisplayMember = "FullName"
-                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("Button" + (i + 12).ToString()), Button).Text = "Sign Out"
-                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("Button" + (i + 12).ToString()), Button).BackColor = Color.RosyBrown
-                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).Enabled = False
-                    CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).BackColor = Color.DarkSlateGray
-                    ActiveStation = ActiveStation + 1
-                Else
-                    con.Close()
-                    con5.Open()
+                ComboBox14.DataSource = dt
+                ComboBox14.ValueMember = "TableSetID"
+                ComboBox14.DisplayMember = "TableSetName"
 
-                    Using reader2 As SqlDataReader = empcmd2.ExecuteReader()
-                        Dim dt2 As DataTable = New DataTable
-                        dt2.Load(reader2)
 
-                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DataSource = dt2
-                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).ValueMember = "Username"
-                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DisplayMember = "FullName"
-
-                    End Using
-                    con5.Close()
-                End If
             End Using
-        Next
+            con.Close()
 
-        con.Close()
-
-
-
-
-
-
-
-
+            Dim con5 As SqlConnection
+            'SERVER'
+            con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMBuildLog;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
+            con5 = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMHumanResource;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
+            '''''''QUERY FOR SELECTING ROSTER'''''''''''
+            Dim empquery As String = "SELECT EN.EmployeeNumber as EmployeeID, CONCAT( [LastName], ', ', [FirstName], ' - ', EN.EmployeeNumber ) as FullName FROM [SMProduction].[dbo].[TableMembers] as TM LEFT JOIN [SMProduction].[dbo].[TableSet] as TS ON TS.TableSetID = TM.TableSetID LEFT JOIN [SMHumanResource].[dbo].[EmployeeNumber] as EN ON EN.EmployeeNumber = TM.EmployeeID LEFT JOIN [SMHumanResource].[dbo].[Employee] as E ON E.EmpID = EN.EmpID WHERE TS.TableSetID = @TSID AND StationID = @SN"
+            Dim empcmd As SqlCommand = New SqlCommand(empquery, con)
 
 
 
+            Dim empquery2 As String = "SELECT '0' as Username, '' as Fullname UNION SELECT EN.EmployeeNumber as Username, CONCAT( E.[LastName], ', ', E.[FirstName], ' - ', EN.EmployeeNumber ) as Fullname FROM [SMHumanResource].[dbo].[Employee] as E LEFT JOIN EmployeeNumber as EN On EN.EmpID = E.EmpID WHERE E.[LastName] <> '' ORDER BY FullName"
+            Dim empcmd2 As SqlCommand = New SqlCommand(empquery2, con5)
 
+            Dim TSID
+            If ComboBox14.SelectedValue = "" Then
+                TSID = 0
+            Else
+                TSID = ComboBox14.SelectedValue
+            End If
+            For i As Integer = 2 To 13
 
+                empcmd.Parameters.Clear()
+                empcmd.Parameters.AddWithValue("@TSID", TSID)
+                empcmd.Parameters.AddWithValue("@TN", TableSet)
+                empcmd.Parameters.AddWithValue("@SN", i - 1)
+                con.Close()
+                con.Open()
+                Using reader As SqlDataReader = empcmd.ExecuteReader()
 
+                    If reader.HasRows Then
+                        Dim dt As DataTable = New DataTable
+                        dt.Load(reader)
 
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DataSource = dt
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).ValueMember = "EmployeeID"
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DisplayMember = "FullName"
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("Button" + (i + 12).ToString()), Button).Text = "Sign Out"
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("Button" + (i + 12).ToString()), Button).BackColor = Color.RosyBrown
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).Enabled = False
+                        CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).BackColor = Color.DarkSlateGray
 
+                    Else
+                        con.Close()
+                        con5.Open()
 
+                        Using reader2 As SqlDataReader = empcmd2.ExecuteReader()
+                            Dim dt2 As DataTable = New DataTable
+                            dt2.Load(reader2)
 
+                            CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DataSource = dt2
+                            CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).ValueMember = "Username"
+                            CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DisplayMember = "FullName"
 
+                        End Using
+                        con5.Close()
+                    End If
+                End Using
+            Next
 
+            con.Close()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        ComboBox14.Visible = True
-        Label21.Visible = False
-        ComboBox14.Text = Label21.Text
-        ComboBox14.Select()
+            ComboBox14.Visible = True
+            Label21.Visible = False
+            ComboBox14.Text = Label21.Text
+            ComboBox14.Select()
+        Else
+        End If
     End Sub
 
 
@@ -1303,7 +1329,77 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ComboBox14_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox14.SelectedIndexChanged
+    Private Sub ComboBox14_GotFocus(sender As Object, e As EventArgs) Handles ComboBox14.GotFocus
+        '''''''VARIABLES'''''''
+        Dim con As SqlConnection
+        Label21.Text = ComboBox14.Text
+        Dim con5 As SqlConnection
+        'SERVER'
+        con = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMBuildLog;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
+        con5 = New SqlConnection("Data Source=SOMNOMED-IBM;Initial Catalog=SMHumanResource;User ID=SOMNOMED-IBM-Guest;Password=Somnomed01")
+        '''''''QUERY FOR SELECTING ROSTER'''''''''''
+        Dim empquery As String = "SELECT EN.EmployeeNumber as EmployeeID, CONCAT( [LastName], ', ', [FirstName], ' - ', EN.EmployeeNumber ) as FullName FROM [SMProduction].[dbo].[TableMembers] as TM LEFT JOIN [SMProduction].[dbo].[TableSet] as TS ON TS.TableSetID = TM.TableSetID LEFT JOIN [SMHumanResource].[dbo].[EmployeeNumber] as EN ON EN.EmployeeNumber = TM.EmployeeID LEFT JOIN [SMHumanResource].[dbo].[Employee] as E ON E.EmpID = EN.EmpID WHERE TS.TableSetID = @TSID AND StationID = @SN"
+        Dim empcmd As SqlCommand = New SqlCommand(empquery, con)
+
+
+
+        Dim empquery2 As String = "SELECT '0' as Username, '' as Fullname UNION SELECT EN.EmployeeNumber as Username, CONCAT( E.[LastName], ', ', E.[FirstName], ' - ', EN.EmployeeNumber ) as Fullname FROM [SMHumanResource].[dbo].[Employee] as E LEFT JOIN EmployeeNumber as EN On EN.EmpID = E.EmpID WHERE E.[LastName] <> '' ORDER BY FullName"
+        Dim empcmd2 As SqlCommand = New SqlCommand(empquery2, con5)
+        Dim TSID
+        If ComboBox14.SelectedValue = "" Then
+            TSID = 0
+        Else
+            TSID = ComboBox14.SelectedValue
+        End If
+        ActiveStation = 0
+        For i As Integer = 2 To 13
+
+            empcmd.Parameters.Clear()
+            empcmd.Parameters.AddWithValue("@TSID", TSID)
+            empcmd.Parameters.AddWithValue("@TN", TableSet)
+            empcmd.Parameters.AddWithValue("@SN", i - 1)
+            con.Close()
+            con.Open()
+            Using reader As SqlDataReader = empcmd.ExecuteReader()
+
+                If reader.HasRows Then
+                    Dim dt As DataTable = New DataTable
+                    dt.Load(reader)
+                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DataSource = dt
+                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).ValueMember = "EmployeeID"
+                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DisplayMember = "FullName"
+                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("Button" + (i + 12).ToString()), Button).Text = "Sign Out"
+                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("Button" + (i + 12).ToString()), Button).BackColor = Color.RosyBrown
+                    CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).Enabled = False
+                    CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).BackColor = Color.DarkSlateGray
+                    ActiveStation = ActiveStation + 1
+                Else
+                    con.Close()
+                    con5.Open()
+
+                    Using reader2 As SqlDataReader = empcmd2.ExecuteReader()
+                        Dim dt2 As DataTable = New DataTable
+                        dt2.Load(reader2)
+
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DataSource = dt2
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).ValueMember = "Username"
+                        CType(CType(Me.Controls("Panel" + (i - 1).ToString()), Panel).Controls("ComboBox" + (i).ToString()), ComboBox).DisplayMember = "FullName"
+
+                    End Using
+                    con5.Close()
+                End If
+            End Using
+        Next
+
+        con.Close()
+
 
     End Sub
+
+    Private Sub ComboBox14_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox14.SelectedIndexChanged
+        Label18.Select()
+        ComboBox14.Select()
+    End Sub
+
+
 End Class
